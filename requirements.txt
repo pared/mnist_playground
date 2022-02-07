@@ -1,0 +1,7 @@
+dvclive==0.5.0
+pillow
+dvc
+torch
+torchvision
+idx2numpy
+tqdm

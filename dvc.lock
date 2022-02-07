@@ -1,0 +1,29 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - path: data
+      md5: b8fc6a410b7fd435413b0ac5b15e9439.dir
+      size: 7008786
+      nfiles: 12500
+    - path: train.py
+      md5: 5c6d706e2afd26c891ddad9a66c6719c
+      size: 5557
+    params:
+      params.yaml:
+        batch_size: 8
+        learning_rate: 0.01
+        num_epochs: 5
+        optimizer: sgd
+    outs:
+    - path: metrics.yml
+      md5: 308a15189cb0eb0bdf33f6ec74935710
+      size: 119
+    - path: model
+      md5: 06d1c092db44bfe0b0de6f692d699c6c
+      size: 19415
+    - path: training_logs
+      md5: a466a61281af342147509c648facf3c7.dir
+      size: 776
+      nfiles: 4

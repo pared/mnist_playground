@@ -1,0 +1,4 @@
+test_accuracy: 0.9301
+test_loss: 0.2211354596670717
+train_accuracy: 0.9948083067092651
+train_loss: 0.14206437563141303

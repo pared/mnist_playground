@@ -1,0 +1,19 @@
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - data
+    - train.py
+    params:
+    - batch_size
+    - learning_rate
+    - num_epochs
+    - optimizer
+    outs:
+    - model
+    metrics:
+    - metrics.yml:
+        cache: false
+    plots:
+    - training_logs:
+        cache: false
