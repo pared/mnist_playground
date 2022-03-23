@@ -27,3 +27,10 @@ plots:
     data:
     - training_logs/test_accuracy.tsv
     - training_logs/train_accuracy.tsv
+  confusion_matrix:
+    x: actual
+    y: predicted
+    template: confusion_normalized
+    data:
+      - test_cm.csv
+      - train_cm.csv
