@@ -2,3 +2,5 @@
 /data
 /training_logs
 /model
+/train_cm.csv
+/test_cm.csv

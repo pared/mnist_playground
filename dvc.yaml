@@ -11,11 +11,11 @@ stages:
     - optimizer
     outs:
     - model
+    - training_logs
+    - train_cm.csv
+    - test_cm.csv
     metrics:
     - metrics.yml:
-        cache: false
-    plots:
-    - training_logs:
         cache: false
 
 plots:

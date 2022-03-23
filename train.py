@@ -80,10 +80,20 @@ class CNN(nn.Module):
         output = self.out(x)
         return output
 
+def write_confusion_matrix_data(actual, predicted, filename, mode="w"):
+    import csv
+    with open(filename, mode, encoding="utf-8") as fd:
+        writer = csv.DictWriter(fd, fieldnames=["actual", "predicted"])
+        writer.writeheader()
+        for actual, predicted in zip(actual, predicted):
+            writer.writerow({"actual": actual, "predicted": predicted})
+
 
 def train(model, loss_func, optimizer, num_epochs, train_loader, test_loader):
     def single_epoch():
         # train
+        train_cf_actual = []
+        train_cf_predicted = []
         train_losses = []
         train_accuracies = []
         for images, labels in train_loader:
@@ -103,9 +113,18 @@ def train(model, loss_func, optimizer, num_epochs, train_loader, test_loader):
             with torch.no_grad():
                 test_output = model(images)
                 pred_y = torch.max(test_output, 1)[1].data.squeeze()
+
                 train_accuracy = (pred_y == labels).sum().item() / float(labels.size(0))
                 train_accuracies.append(train_accuracy)
+
+                train_cf_actual.extend(labels.tolist())
+                train_cf_predicted.extend(pred_y.tolist())
+
+        write_confusion_matrix_data(actual = train_cf_actual, predicted=train_cf_predicted, filename="train_cm.csv")
+
         # test
+        test_cf_actual = []
+        test_cf_predicted = []
         test_losses = []
         test_accuracies = []
         with torch.no_grad():
@@ -114,8 +133,14 @@ def train(model, loss_func, optimizer, num_epochs, train_loader, test_loader):
                 pred_y = torch.max(test_output, 1)[1].data.squeeze()
                 test_loss = loss_func(test_output, labels)
                 test_losses.append(test_loss.item())
+
                 test_accuracy = (pred_y == labels).sum().item() / float(labels.size(0))
                 test_accuracies.append(test_accuracy)
+
+                test_cf_actual.extend(labels.tolist())
+                test_cf_predicted.extend(pred_y.tolist())
+
+        write_confusion_matrix_data(actual=test_cf_actual, predicted=test_cf_predicted, filename="test_cm.csv")
 
         avg_train_loss = avg(train_losses)
         avg_train_accuracy = avg(train_accuracies)
