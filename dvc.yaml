@@ -17,20 +17,6 @@ stages:
     metrics:
     - metrics.yml:
         cache: false
-
-plots:
-  acc_train_vs_test:
-    x: step
-    y: 
-      training_logs/test_accuracy.tsv: test_accuracy
-      training_logs/train_accuracy.tsv: train_accuracy
-    data:
-    - training_logs/test_accuracy.tsv
-    - training_logs/train_accuracy.tsv
-  confusion_matrix:
-    x: actual
-    y: predicted
-    template: confusion_normalized
-    data:
-      - test_cm.csv
-      - train_cm.csv
+    plots:
+      - train.jpg
+      - test.jpg

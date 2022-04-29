@@ -88,6 +88,18 @@ def write_confusion_matrix_data(actual, predicted, filename, mode="w"):
         for actual, predicted in zip(actual, predicted):
             writer.writerow({"actual": actual, "predicted": predicted})
 
+def write_confusion_matrix_image(actual, predicted, filename):
+        from sklearn.metrics import confusion_matrix
+        cm = confusion_matrix(actual, predicted)
+        import matplotlib.pyplot as plt
+        plt.imshow(cm, cmap=plt.cm.Blues)
+        plt.xlabel("Predicted labels")
+        plt.ylabel("True labels")
+        plt.xticks([], [])
+        plt.yticks([], [])
+        plt.title('Confusion matrix')
+        plt.savefig(filename)
+
 
 def train(model, loss_func, optimizer, num_epochs, train_loader, test_loader):
     def single_epoch():
@@ -121,6 +133,7 @@ def train(model, loss_func, optimizer, num_epochs, train_loader, test_loader):
                 train_cf_predicted.extend(pred_y.tolist())
 
         write_confusion_matrix_data(actual = train_cf_actual, predicted=train_cf_predicted, filename="train_cm.csv")
+        write_confusion_matrix_image(actual=train_cf_actual, predicted=train_cf_predicted, filename="train.jpg")
 
         # test
         test_cf_actual = []
@@ -141,6 +154,7 @@ def train(model, loss_func, optimizer, num_epochs, train_loader, test_loader):
                 test_cf_predicted.extend(pred_y.tolist())
 
         write_confusion_matrix_data(actual=test_cf_actual, predicted=test_cf_predicted, filename="test_cm.csv")
+        write_confusion_matrix_image(actual=test_cf_actual, predicted=test_cf_predicted, filename="test.jpg")
 
         avg_train_loss = avg(train_losses)
         avg_train_accuracy = avg(train_accuracies)
