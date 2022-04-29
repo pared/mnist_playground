@@ -12,7 +12,7 @@ from torchvision.datasets import ImageFolder
 from torchvision.transforms import Compose, Normalize, ToTensor
 from tqdm import tqdm
 
-logger = Live("training_logs", summary=False)
+logger = Live("training_logs")
 logger._html = False
 
 if torch.cuda.is_available():
