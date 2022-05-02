@@ -31,8 +31,8 @@ plots:
     - training_logs/test_accuracy.tsv
     - training_logs/train_accuracy.tsv
   confusion_matrix:
-    x: actual
-    y: predicted
+    x: predicted 
+    y: actual
     template: confusion_normalized
     title: Confusion matrix
     data:

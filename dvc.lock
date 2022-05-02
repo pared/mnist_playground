@@ -8,34 +8,34 @@ stages:
       size: 7008786
       nfiles: 12500
     - path: train.py
-      md5: 2e4b42fac7bc233f7c389c697f4f5556
-      size: 7180
+      md5: 22edcd650dba1761a1339b41e93c4544
+      size: 7165
     params:
       params.yaml:
         batch_size: 64
-        learning_rate: 0.01
+        learning_rate: 0.005
         num_epochs: 4
         optimizer: sgd
     outs:
     - path: metrics.yml
-      md5: 32438fbd8a37468fa8a992d84f561c01
-      size: 122
+      md5: 602c2484690797db4c444cd0c5f46daf
+      size: 121
     - path: model
-      md5: ebdb12d8552209f0d5480be405e4c531
+      md5: 4df846441a5a49490deb127480b236dd
       size: 19415
     - path: test.jpg
-      md5: 8dbcf6e5906f24c78b8966a846ab0ee7
-      size: 16335
+      md5: fca7b8b1a6f7b54ee2ee98f12d49b230
+      size: 16785
     - path: test_cm.csv
-      md5: 1ff82b0d0cb6f2811b69a67813389fe8
+      md5: af67dce6e7c653d157c7dc631152f63c
       size: 50018
     - path: train.jpg
-      md5: f13f9794186dd7395d96dc4fb68f7d1e
-      size: 16061
+      md5: 1d1e88385c5d561d2fcfa4d13368af48
+      size: 16749
     - path: train_cm.csv
-      md5: a9221a012370628fd7ca58f90a7f32de
+      md5: 0975362e43edf4e4298f4ec134c0daff
       size: 12518
     - path: training_logs
-      md5: d4dd0d558da7a2dcd0dc346a2919949f.dir
-      size: 657
+      md5: 34a8d89c3533bbd90fe7365f7e64be9f.dir
+      size: 658
       nfiles: 4
