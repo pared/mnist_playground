@@ -15,27 +15,27 @@ stages:
         batch_size: 64
         learning_rate: 0.005
         num_epochs: 4
-        optimizer: sgd
+        optimizer: adam
     outs:
     - path: metrics.yml
-      md5: 602c2484690797db4c444cd0c5f46daf
-      size: 121
+      md5: dbbc3bc46a183da853aa7e344ad51c36
+      size: 125
     - path: model
-      md5: 4df846441a5a49490deb127480b236dd
+      md5: 02c80e0e8063b87d78f68f378938267a
       size: 19415
     - path: test.jpg
-      md5: fca7b8b1a6f7b54ee2ee98f12d49b230
-      size: 16785
+      md5: faa23bb7bb6cab7aa571ffead09edc67
+      size: 15611
     - path: test_cm.csv
-      md5: af67dce6e7c653d157c7dc631152f63c
+      md5: 8523748878a8641d10d37aa4bbb8742a
       size: 50018
     - path: train.jpg
-      md5: 1d1e88385c5d561d2fcfa4d13368af48
-      size: 16749
+      md5: d99903dafe9d0c7fa08e55749fcd0a57
+      size: 15357
     - path: train_cm.csv
-      md5: 0975362e43edf4e4298f4ec134c0daff
+      md5: 49821984781039ddfbd4500792bb7fda
       size: 12518
     - path: training_logs
-      md5: 34a8d89c3533bbd90fe7365f7e64be9f.dir
-      size: 658
+      md5: df5173c10045a78f66a05c056cf2db41.dir
+      size: 661
       nfiles: 4

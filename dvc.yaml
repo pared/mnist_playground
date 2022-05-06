@@ -25,11 +25,8 @@ plots:
   acc_train_vs_test:
     x: step
     y: 
-      training_logs/test_accuracy.tsv: test_accuracy
-      training_logs/train_accuracy.tsv: train_accuracy
-    data:
-    - training_logs/test_accuracy.tsv
-    - training_logs/train_accuracy.tsv
+      training_logs/scalars/test_accuracy.tsv: test_accuracy
+      training_logs/scalars/train_accuracy.tsv: train_accuracy
   confusion_matrix:
     x: predicted 
     y: actual
