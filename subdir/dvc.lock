@@ -1,0 +1,12 @@
+schema: '2.0'
+stages:
+  copy:
+    cmd: cp ../train_cm.csv new_cm.csv
+    deps:
+    - path: ../train_cm.csv
+      md5: 3ece4ab2265b8caa123264828dd320a7
+      size: 12518
+    outs:
+    - path: new_cm.csv
+      md5: 3ece4ab2265b8caa123264828dd320a7
+      size: 12518

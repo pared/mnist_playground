@@ -1,0 +1,17 @@
+stages:
+  copy:
+    cmd: cp ../train_cm.csv new_cm.csv
+    deps:
+    - ../train_cm.csv
+    outs:
+    - new_cm.csv
+
+plots:
+  confusion_matrix_from_subdir:
+      x: predicted 
+      y: actual
+      template: confusion_normalized
+      title: Confusion matrix
+      data:
+        - ../test_cm.csv
+        - new_cm.csv

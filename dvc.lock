@@ -13,29 +13,29 @@ stages:
     params:
       params.yaml:
         batch_size: 64
-        learning_rate: 0.005
+        learning_rate: 0.0005
         num_epochs: 4
-        optimizer: adam
+        optimizer: adamax
     outs:
     - path: metrics.yml
-      md5: 886885af77911c3aea2f822d9f62c219
-      size: 124
+      md5: 83ea59dc98240d1eff7fb7b702e39a8a
+      size: 123
     - path: model
-      md5: a2c22c5e5c8eca58ccee6b848f893876
+      md5: 090f99355d68e5695a0e39baa33b2fdc
       size: 19415
     - path: test.jpg
-      md5: 2db40c99abdad0bce71bf646757993f5
-      size: 15587
+      md5: e96807d561d8a01a50b464b89ae9d7ec
+      size: 16220
     - path: test_cm.csv
-      md5: fc276551c29cc7fc7d88c57f82dad5c9
+      md5: 54c973e80657802c1b552e1a77b37f3b
       size: 50018
     - path: train.jpg
-      md5: 236f24cfef2454b0608f59b157991d46
-      size: 15450
+      md5: 60f096b98f15cce495e06bbcd04d15b7
+      size: 16493
     - path: train_cm.csv
-      md5: 791a16798324bdd785ab9355c89a77bc
+      md5: 3ece4ab2265b8caa123264828dd320a7
       size: 12518
     - path: training_logs
-      md5: af276712e676d34fda2f8d860b80c0c7.dir
-      size: 18752
+      md5: 919b9fe91e60ebe8cb7bae79d76538bd.dir
+      size: 18736
       nfiles: 5
