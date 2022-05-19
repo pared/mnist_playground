@@ -18,24 +18,24 @@ stages:
         optimizer: adam
     outs:
     - path: metrics.yml
-      md5: dbbc3bc46a183da853aa7e344ad51c36
+      md5: 7413090e79e563b99ee43e56b0f0a40d
       size: 125
     - path: model
-      md5: 02c80e0e8063b87d78f68f378938267a
+      md5: 56f386ccb489795ffc1a46947df1f2ea
       size: 19415
     - path: test.jpg
-      md5: faa23bb7bb6cab7aa571ffead09edc67
-      size: 15611
+      md5: 990da240ed2825e2f6f3af7c69688bbd
+      size: 15598
     - path: test_cm.csv
-      md5: 8523748878a8641d10d37aa4bbb8742a
+      md5: 9b624b680e71af79d0a5f6e1528f7e36
       size: 50018
     - path: train.jpg
-      md5: d99903dafe9d0c7fa08e55749fcd0a57
-      size: 15357
+      md5: f21f3f225ca4e8ace4213bb690ac0692
+      size: 15329
     - path: train_cm.csv
-      md5: 49821984781039ddfbd4500792bb7fda
+      md5: 01d81d41d8f1280ab50859c858ef353d
       size: 12518
     - path: training_logs
-      md5: df5173c10045a78f66a05c056cf2db41.dir
-      size: 661
-      nfiles: 4
+      md5: e3fe1bc62d65d0741c19b801e25090d9.dir
+      size: 18762
+      nfiles: 5
