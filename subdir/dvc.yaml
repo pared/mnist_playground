@@ -9,9 +9,9 @@ stages:
 plots:
   confusion_matrix_from_subdir:
       x: predicted 
-      y: actual
+      y: 
+        ../test_cm.csv: actual
+        new_cm.csv: actual
       template: confusion_normalized
-      title: Confusion matrix
-      data:
-        - ../test_cm.csv
-        - new_cm.csv
+      title: Confusion matrix but from subdir
+        

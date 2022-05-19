@@ -17,33 +17,29 @@ stages:
     metrics:
     - metrics.yml:
         cache: false
-    # plots:
-    #   - train.jpg
-    #   - test.jpg
+    plots:
+      - train.jpg
+      - test.jpg
 
-# plots:
-  # acc_train_vs_test:
-    # x: step
-    # y: 
-    #   training_logs/scalars/test_accuracy.tsv: test_accuracy
-    #   training_logs/scalars/train_accuracy.tsv: train_accuracy
-    #   training_logs/scalars/train_loss.tsv: train_loss
-  # acc_train_vs_test_copy:
-    # x: step
-    # y: 
-    #   - test_accuracy
-    #   - train_accuracy
-    # data:
-    #   - training_logs/scalars/test_accuracy.tsv
-    #   - training_logs/scalars/train_accuracy.tsv
-  # confusion_matrix:
-    # x: predicted 
-    # y: actual
-    # template: confusion_normalized
-    # title: Confusion matrix
-    # data:
-    #   - test_cm.csv
-    #   - train_cm.csv
+plots:
+  acc_train_vs_test:
+    x: step
+    y: 
+      training_logs/scalars/test_accuracy.tsv: test_accuracy
+      training_logs/scalars/train_accuracy.tsv: train_accuracy
+      training_logs/scalars/train_loss.tsv: train_loss
+  acc_train_vs_test_copy:
+    x: step
+    y: 
+      training_logs/scalars/test_accuracy.tsv: test_accuracy
+      training_logs/scalars/train_accuracy.tsv: train_accuracy
+  confusion_matrix:
+    x: predicted 
+    y: 
+      test_cm.csv: actual
+      train_cm.csv: actual
+    template: confusion_normalized
+    title: Confusion matrix
 
 
 

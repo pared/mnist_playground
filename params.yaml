@@ -1,4 +1,4 @@
 batch_size: 64
 num_epochs: 4
-optimizer: adamax
-learning_rate: 0.0005
+optimizer: adam
+learning_rate: 0.005

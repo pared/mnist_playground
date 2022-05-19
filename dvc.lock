@@ -13,29 +13,23 @@ stages:
     params:
       params.yaml:
         batch_size: 64
-        learning_rate: 0.0005
+        learning_rate: 0.005
         num_epochs: 4
-        optimizer: adamax
+        optimizer: adam
     outs:
     - path: metrics.yml
-      md5: 83ea59dc98240d1eff7fb7b702e39a8a
-      size: 123
+      md5: e2f2950f84c8819635a8a5ee25d331bf
+      size: 125
     - path: model
-      md5: 090f99355d68e5695a0e39baa33b2fdc
+      md5: 58f2bb0ea2fee86ff2a67eaed052434e
       size: 19415
-    - path: test.jpg
-      md5: e96807d561d8a01a50b464b89ae9d7ec
-      size: 16220
     - path: test_cm.csv
-      md5: 54c973e80657802c1b552e1a77b37f3b
+      md5: ba94f57c1c4a15ea76851ae55d32b75c
       size: 50018
-    - path: train.jpg
-      md5: 60f096b98f15cce495e06bbcd04d15b7
-      size: 16493
     - path: train_cm.csv
-      md5: 3ece4ab2265b8caa123264828dd320a7
+      md5: da948596a35de6fc1b376a643fd4e079
       size: 12518
     - path: training_logs
-      md5: 919b9fe91e60ebe8cb7bae79d76538bd.dir
-      size: 18736
+      md5: bf926cee8efa627f76eb8e1d8543d353.dir
+      size: 18752
       nfiles: 5
